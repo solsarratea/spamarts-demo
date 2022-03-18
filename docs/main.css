@@ -1,7 +1,5 @@
 video {
   /* height: 100vh; */
-  width: 100%;
-  height: 100%;
   /* margin-top: 100vh; */
   position: absolute;
 }
@@ -208,8 +206,7 @@ canvas {
   bottom: 0 !important;
   top: unset;
 }
-#target {
-}
+
 body {
   width: 100vw;
   margin: 0;
