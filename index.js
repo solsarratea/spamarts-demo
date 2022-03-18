@@ -109,6 +109,7 @@ shaders.fragment = shaders.fragment.replace(
 //////////////////////////////////////////////////////////////////////////////
 ///CONTROLS
 var Tweakpane  = require("tweakpane/dist/tweakpane.min.js");
+const { isNumber } = require("@tensorflow/tfjs-core/dist/util");
   const pane = new Tweakpane.Pane();
 
 
@@ -191,7 +192,10 @@ navigator.mediaDevices.enumerateDevices().then((devices) => {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     console.log(urlParams.get('cam'))
-    const cam = parseInt(urlParams.get('cam')) || 0
+    const cam = parseInt(urlParams.get('cam'))
+    if (!isNumber(cam)){
+      cam = 0;
+    }
 
     console.log("selected device: ", webcams[cam].deviceId, cam)
     initWebcam(webcams[cam].deviceId)
