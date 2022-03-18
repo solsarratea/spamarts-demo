@@ -122,7 +122,6 @@ const initWebcam = (deviceId) => setupWebcam({
   deviceId,
   regl,
   done: (webcam,{ videoWidth, videoHeight}) => {
-    window.w =webcam0
     let drawTriangle = regl({
         uniforms: {
         tick: ({tick}) => tick % 10000,
