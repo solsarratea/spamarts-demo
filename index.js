@@ -1,4 +1,4 @@
-const regl = require("regl")("#target",{ pixelRatio: 1. });
+const regl = require("regl")();
 const { setupWebcam } = require("./src/camera.js");
 require("./src/fade.js");
 require("./src/reference.js");
