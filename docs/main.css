@@ -33,10 +33,22 @@ button {
   font-family: "Astloch", bold;
   background-color: black;
   color: white;
+  height:2em;
+  width:3em;
 
 }
+@media (min-width: 480px) {
+  button {
+      width:100px;
+  }
+}
+
 #buttoncontainer{
-    display: table;
+   display: flex;
+   flex-direction: row;
+ 
+   margin:1em;
+}
 
 }
 
@@ -45,8 +57,7 @@ button:active {
   animation: pulse 0.1s 1 ease-out;
 }
 button:focus {
-  outline: 0;
-  filter: drop-shadow(1px 1px 3px white);
+  outline: "none";
 }
 
 @keyframes pulse {
