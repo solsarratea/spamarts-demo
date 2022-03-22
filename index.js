@@ -109,9 +109,7 @@ shaders.fragment = shaders.fragment.replace(
 //////////////////////////////////////////////////////////////////////////////
 ///CONTROLS
 var Tweakpane  = require("tweakpane/dist/tweakpane.min.js");
-const { isNumber } = require("@tensorflow/tfjs-core/dist/util");
-  const pane = new Tweakpane.Pane();
-
+//const pane = new Tweakpane.Pane();
 
 
 //////////////////////////////////////////////////////////////////////////////
