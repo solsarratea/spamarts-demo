@@ -193,12 +193,10 @@ navigator.mediaDevices.enumerateDevices().then((devices) => {
     const urlParams = new URLSearchParams(queryString);
     console.log("all devices", webcams)
 
-    const cam = parseInt(urlParams.get('cam'))
-
-    if (!isNumber(cam)){
+    var cam = parseInt(urlParams.get('cam'))
+    if (isNaN(cam)){
       cam = 0;
     }
-
     console.log("selected device: ", webcams[cam].deviceId, cam)
     initWebcam(webcams[cam].deviceId)
 
