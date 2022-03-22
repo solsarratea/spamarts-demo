@@ -200,3 +200,19 @@ navigator.mediaDevices.enumerateDevices().then((devices) => {
 
 
 })
+
+////Listeners
+window.snap=false
+const snap = document.getElementById("snap");
+
+snap.addEventListener("click", () => {
+    window.snap = true;
+
+});
+
+const movie = document.getElementById("movie");
+
+movie.addEventListener("click", () => {
+    window.snap = false;
+
+});

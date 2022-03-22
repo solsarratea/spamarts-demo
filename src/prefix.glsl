@@ -406,4 +406,13 @@ vec3 RGBsplit( float delta){
 	vec4 c3 =texture2D(previousTex, backCoord + value )*step(value.x, 1.-backCoord.x)*step(value.y, 1.-backCoord.y);
 	return vec3( c1.r, c2.g, c3.b);
 }
+float bpm(float bpm, float q, float intensity){
+    // Adaptacion de funcion creada por Char Stiles
+    // La idea es generar una funcion que sirva como especie de metronomo.
+    // Devuelve un valor entre 0 y 1
+    // para visualizar bpm https://www.desmos.com/calculator/6lvbxrudxu
+ float bps = 60./bpm; // beats por segundo
+ float bpmVis = tan((time*PI/q)/bps);
+ return max(min(abs(bpmVis),1.),0.) * intensity; 
+}
 
