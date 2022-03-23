@@ -1,7 +1,8 @@
 void main() {
-  vec3 color;  vec2 uvN = (uv * 0.5) + vec2(0.5);
+  vec3 color; vec2 pos = uv; 
+  vec2 posN = (pos * 0.5) + vec2(0.5);
 
-  vec3 video = getCam(uv);
+  color = getCam(pos);
 
- gl_FragColor = vec4(video, 1);
+ gl_FragColor = vec4(color, 1);
 }
