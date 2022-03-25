@@ -15,7 +15,7 @@ Cualquier edición del shader no se guardará, por eso para customizar la herram
 
 Instalarse el administrador de paquetes [yarn](https://github.com/yarnpkg/berry)
 
-1. Clonarse el repo y tener instalado 
+1. Clonarse el repo  
 2. Correr desde la terminal `yarn` y `yarn start`
 3. Entrar `http://localhost:9966/`
 
