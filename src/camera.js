@@ -3,23 +3,22 @@ let video = null;
 
 function setupWebcam(options) {
     const regl = options.regl;
-    const deviceId= options.deviceId;
+    const constraints= options.constraints;
    
   function startup() {
     video = document.getElementById("video");
-
+  
     function tryGetUserMedia() {
       navigator.mediaDevices
-        // .getDisplayMedia({
         .getUserMedia({
-            video: { deviceId: {exact: deviceId }},
+            video: constraints,
             audio: false
         })
         .then(gumSuccess)
         .catch(e => {
           console.log("initial gum failed");
         });
-        //video.play();
+       
     }
 
     tryGetUserMedia();

@@ -111,8 +111,8 @@ shaders.fragment = shaders.fragment.replace(
 
 const lastFrame = regl.texture();
 
-const initWebcam = (deviceId) => setupWebcam({
-  deviceId,
+const initWebcam = (constraints) => setupWebcam({
+  constraints,
   regl,
   done: (webcam,{ videoWidth, videoHeight}) => {
     let drawTriangle = regl({
@@ -180,17 +180,19 @@ navigator.mediaDevices.enumerateDevices().then((devices) => {
             webcams.push(device)
         }
     })
-    window.webcams = webcams;
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    console.log("all devices", webcams)
 
-    var cam = parseInt(urlParams.get('cam'))
+    var cam = parseInt(urlParams.get('cam'));
+    var constraints;
+ 
     if (isNaN(cam)){
-      cam = 0;
+      constraints = true;
+    }else{
+      console.log("index",cam, webcams[cam].deviceId)
+      constraints = { deviceId: {exact: webcams[cam].deviceId }};
     }
-    console.log("selected device: ", webcams[cam].deviceId, cam)
-    initWebcam(webcams[cam].deviceId)
+    initWebcam(constraints)
 
 
 })
